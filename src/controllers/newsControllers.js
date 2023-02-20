@@ -19,6 +19,17 @@ const NewsController = {
         const data = req.body;
         News.insertMany(data, (req, res) => {
             try {
+                console.log("success" + data);
+            } catch (error) {
+                console.log("err");
+            }
+        });
+    },
+    delete(req, res) {
+        const data = req.params.id;
+        console.log(data);
+        News.deleteOne({ _id: data }, (req, res) => {
+            try {
                 console.log("success");
             } catch (error) {
                 console.log("err");
