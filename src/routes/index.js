@@ -9,7 +9,7 @@ const router = (app) => {
     app.use("/news", newsRouter);
 
     // page index
-    app.use("/", indexRouter);
+    app.get("/", indexRouter);
 };
 
 //--------------------------------------------------------------------------------------
