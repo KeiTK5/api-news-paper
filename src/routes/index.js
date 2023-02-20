@@ -6,7 +6,7 @@ const indexRouter = require("./site");
 const router = (app) => {
     
     // page news
-    app.get("/news", newsRouter);
+    app.use("/news", newsRouter);
 
     // page index
     app.get("/", indexRouter);
