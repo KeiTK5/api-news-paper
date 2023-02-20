@@ -8,6 +8,8 @@ const router = (app) => {
     // page news
     app.use("/news", newsRouter);
 
+    // page index
+    app.get("/", indexRouter);
 };
 
 //--------------------------------------------------------------------------------------
