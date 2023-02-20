@@ -1,6 +1,6 @@
 const News = require("../models/newsModel");
 
-const NewsController = {
+class NewsController  {
     index(req, res) {
         News.find({}, (err, news) => {
             try {
@@ -9,11 +9,11 @@ const NewsController = {
                 res.status(400).json({ error: "error" });
             }
         });
-    },
+    }
 
     detail(req, res) {
         res.send(`detail ${req.params.slug}`);
-    },
+    }
 
     create(req, res) {
         const data = req.body;
@@ -24,7 +24,7 @@ const NewsController = {
                 console.log("err");
             }
         });
-    },
+    }
     delete(req, res) {
         const data = req.params.id;
         console.log(data);
@@ -35,8 +35,8 @@ const NewsController = {
                 console.log("err");
             }
         });
-    },
+    }
 };
 
 //--------------------------------------------------------------------------------------
-module.exports = NewsController;
+module.exports = new NewsController;

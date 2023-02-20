@@ -7,9 +7,9 @@ const newsController = require("../controllers/newsControllers");
 
 //--------------------------------------------------------------------------------------
 router.delete("/:id", newsController.delete);
-router.use("/:slug", newsController.detail);
+router.get("/:slug", newsController.detail);
 router.post("/", newsController.create);
-router.use("/", newsController.index);
+router.get("/", newsController.index);
 
 //--------------------------------------------------------------------------------------
 module.exports = router;
