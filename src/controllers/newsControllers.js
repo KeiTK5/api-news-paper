@@ -3,9 +3,9 @@ const News = require("../models/newsModel");
 const NewsController = {
     index(req, res) {
         News.find({}, (err, news) => {
-            if (!err) {
+            try {
                 res.json(news);
-            } else {
+            } catch (error) {
                 res.status(400).json({ error: "error" });
             }
         });
